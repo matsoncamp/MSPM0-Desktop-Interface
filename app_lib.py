@@ -24,14 +24,14 @@ async def connect(address,character):
     async with BleakClient(address) as client:
         print("Connected to Device")
         if client.is_connected:
-            # services = client.services
-            # for service in services:
-            #     print(f"Service: {service.uuid}")
-            #     for char in service.characteristics:
-            #         props = ", ".join(char.properties)
-            #         print(f"   Characteristic: {char.uuid} (Properties: {props})")
-            message = input("Write Message: ")
-            await send(client, character, message)
+            services = client.services
+            for service in services:
+                print(f"Service: {service.uuid}")
+                for char in service.characteristics:
+                    props = ", ".join(char.properties)
+                    print(f"   Characteristic: {char.uuid} (Properties: {props})")
+            # message = input("Write Message: ")
+            # await send(client, character, message)
 
 if __name__ == "__main__":
     address = "F8:30:02:39:BD:05"
