@@ -73,7 +73,7 @@ def send(log, message):
             if message[0] == 'g':
                 loop.run_until_complete(client.write_gatt_char(characteristic, message.encode('utf-8')))
                 #log("Message Sent")
-            if message[0] == 'i':
+            elif message[0] == 'i':
                 loop.run_until_complete(client.write_gatt_char(characteristic, message.encode('utf-8')))
 
         except Exception as e:
