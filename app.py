@@ -21,7 +21,7 @@ class Redirector:
         pass
 
 def notification(sender, data):
-    log(f"From {sender}: {data.decode(errors='ignore')}")
+    log(f"Received: {data.decode('ascii',errors='ignore')}")
 
 def connect(add, log):
     def run():

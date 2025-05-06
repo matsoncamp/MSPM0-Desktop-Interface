@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app_project",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "app_project",
+                "resourceId": "/app_project/uart_echo_interrupts_standby.c"
+            }
+        },
+        {
+            "name": "app_project (1)",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "app_project",
+                "resourceId": "/app_project/uart_echo_interrupts_standby.syscfg"
+            }
+        }
+    ]
+}
