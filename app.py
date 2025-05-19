@@ -81,8 +81,8 @@ def send(log, message):
     threading.Thread(target=run).start()
 
 root = tk.Tk()
-root.title("MSPM0 Desktop Application")
-root.configure(bg="red")
+root.title("Arduino UNO R4 Application")
+root.configure(bg="blue")
 
 box = tk.Text(root, height=15, width = 60)
 box.pack(padx = 10, pady = 10)
