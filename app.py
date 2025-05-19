@@ -54,8 +54,8 @@ def start_scan(set_device, log):
             devices = loop.run_until_complete(BleakScanner.discover(timeout=5.0))
             results = []
             for device in devices:
-                if device.name == "DSD TECH":
-                    results.append((device.name, device.address))
+                #if device.name == "DSD TECH":
+                results.append((device.name, device.address))
             set_device(results)
 
         except Exception as e:
@@ -93,7 +93,7 @@ def clear_text():
 clear_button = tk.Button(text="Clear Text", command=clear_text)
 clear_button.pack(pady=5)
 
-listlabel = tk.Label(root, text="Device List", bg="red").pack()
+listlabel = tk.Label(root, text="Device List", bg="blue").pack()
 
 device_box = tk.Listbox(root, height=6, width = 60)
 device_box.pack(pady=5)
@@ -131,26 +131,26 @@ scan_button.pack(padx = 20, pady=10)
 connect_button = tk.Button(root, text="Connect", bg="white", command=lambda: connect(selected.get(), log))
 connect_button.pack(padx = 20, pady = 10)
 
-gpio_label = tk.Label(root, text = "GPIO Buttons", bg="red")
+gpio_label = tk.Label(root, text = "GPIO Buttons", bg="blue")
 gpio_label.pack()
 
-gpio_row = tk.Frame(root, bg="red")
+gpio_row = tk.Frame(root, bg="blue")
 gpio_row.pack(pady=10)
 
-red = tk.Button(gpio_row, text="Red", command=lambda: send(log, "gR"))
-green = tk.Button(gpio_row, text="Green", command=lambda: send(log, "gG"))
-blue = tk.Button(gpio_row, text="Blue", command=lambda: send(log, "gB"))
-mono = tk.Button(gpio_row, text="Mono", command=lambda: send(log, "gM"))
+red = tk.Button(gpio_row, text="Red", bg="red", command=lambda: send(log, "gR"))
+green = tk.Button(gpio_row, text="Green", bg='green', command=lambda: send(log, "gG"))
+blue = tk.Button(gpio_row, text="Blue", bg='cyan', command=lambda: send(log, "gB"))
+mono = tk.Button(gpio_row, text="Mono", bg="white", command=lambda: send(log, "gM"))
 
 red.pack(side="left", padx=10)
 green.pack(side="left", padx=10)
 blue.pack(side="left", padx=10)
 mono.pack(side="left", padx=10)
 
-dht22_label = tk.Label(root, text="DHT22" ,bg="red")
+dht22_label = tk.Label(root, text="DHT22" ,bg="blue")
 dht22_label.pack(pady=10)
 
-dht22_row = tk.Frame(root, bg="red")
+dht22_row = tk.Frame(root, bg="blue")
 dht22_row.pack(pady=10)
 
 temp = tk.Button(dht22_row, text="Temp")
